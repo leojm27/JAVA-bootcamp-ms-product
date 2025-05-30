@@ -4,7 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}) // Exclude DataSourceAutoConfiguration if not using a database
+// @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}) // Exclude DataSourceAutoConfiguration if not using a database
+@SpringBootApplication()
 public class MsProductApplication {
 
 	public static void main(String[] args) {
