@@ -18,6 +18,8 @@ public class Categoria {
     @Column(name = "descripcion")
     private String descripcion;
 
+    protected Categoria() {}
+
     public Categoria(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;

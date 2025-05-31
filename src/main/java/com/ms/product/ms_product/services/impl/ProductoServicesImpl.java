@@ -18,12 +18,12 @@ public class ProductoServicesImpl implements ProductoService {
 
     @Override
     public Producto createProducto(Producto producto) {
-        return null; // Reemplazar con la implementación real
+        return null;
     }
 
     @Override
     public Producto getProductoById(Long id) {
-        return null; // Reemplazar con la implementación real
+        return null;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ProductoServicesImpl implements ProductoService {
     }
 
     @Override
-    public void deleteProducto(Long id) {
+    public void softDeleteProducto(Long id) {
         // Lógica para eliminar un producto
     }
 }

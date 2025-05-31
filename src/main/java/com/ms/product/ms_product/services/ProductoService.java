@@ -12,6 +12,6 @@ public interface ProductoService {
 
     Producto updateProducto(Producto producto, Long id);
 
-    void deleteProducto(Long id);
+    void softDeleteProducto(Long id);
 
 }
