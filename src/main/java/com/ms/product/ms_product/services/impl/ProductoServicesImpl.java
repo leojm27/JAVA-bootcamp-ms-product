@@ -51,8 +51,8 @@ public class ProductoServicesImpl implements ProductoService {
                     if (producto.getPrecio() != null) {
                         existingProducto.setPrecio(producto.getPrecio());
                     }
-                    if (producto.getId_categoria() != null) {
-                        existingProducto.setId_categoria(producto.getId_categoria());
+                    if (producto.getIdCategoria() != null) {
+                        existingProducto.setIdCategoria(producto.getIdCategoria());
                     }
                     return productoRepository.save(existingProducto);
                 }).orElse(null);

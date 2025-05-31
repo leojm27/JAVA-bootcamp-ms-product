@@ -26,7 +26,7 @@ public class Producto {
     private Double precio;
 
     @Column(name = "id_categoria", nullable = false)
-    private Long id_categoria;
+    private Long idCategoria;
 
     @Column(name = "created_at" , nullable = false)
     private Date createdAt = new Date();
@@ -37,11 +37,11 @@ public class Producto {
     @Column(name = "deleted_at")
     private Date deletedAt;
 
-    public Producto(String nombre, String descripcion, Double precio, Long id_categoria) {
+    public Producto(String nombre, String descripcion, Double precio, Long idCategoria) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.id_categoria = id_categoria;
+        this.idCategoria = idCategoria;
     }
 
     @PreUpdate
