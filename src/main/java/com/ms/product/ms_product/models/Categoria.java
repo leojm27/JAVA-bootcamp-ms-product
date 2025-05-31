@@ -2,10 +2,14 @@ package com.ms.product.ms_product.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @Entity
 @Table(name = "categorias")
+@NoArgsConstructor
 public class Categoria {
 
     @Id
@@ -18,10 +22,22 @@ public class Categoria {
     @Column(name = "descripcion")
     private String descripcion;
 
-    protected Categoria() {}
+    @Column(name = "created_at" , nullable = false)
+    private Date createdAt = new Date();
+
+    @Column(name = "updated_at")
+    private Date updatedAt;
+
+    @Column(name = "deleted_at")
+    private Date deletedAt;
 
     public Categoria(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = new Date();
     }
 }

@@ -1,6 +1,7 @@
 package com.ms.product.ms_product.services.impl;
 
 import com.ms.product.ms_product.models.Producto;
+import com.ms.product.ms_product.repository.ProductoRepository;
 import com.ms.product.ms_product.services.ProductoService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,21 +9,27 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+// @AllArgsConstructor
 public class ProductoServicesImpl implements ProductoService {
 
-    @Override
-    public List<Producto> getProductos() {
-        return List.of();
+    private final ProductoRepository productoRepository;
+
+    public ProductoServicesImpl(ProductoRepository productoRepository) {
+        this.productoRepository = productoRepository;
     }
 
     @Override
-    public Producto createProducto(Producto producto) {
-        return null;
+    public List<Producto> getProductos() {
+        return productoRepository.findAll();
     }
 
     @Override
     public Producto getProductoById(Long id) {
+        return null;
+    }
+
+    @Override
+    public Producto createProducto(Producto producto) {
         return null;
     }
 
