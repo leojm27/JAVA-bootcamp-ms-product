@@ -21,11 +21,13 @@ public class CategoriaServiceImpl implements CategoriaService {
         return categoriaRepository.findAll()
                 .stream()
                 .sorted(Comparator.comparing(Categoria::getId))
+                .filter(categoria -> categoria.getDeletedAt() == null)
                 .toList();
     }
 
     public Categoria getCategoriaById(Long id) {
         return categoriaRepository.findById(id)
+                .filter(categoria -> categoria.getDeletedAt() == null)
                 .orElse(null);
     }
 
@@ -50,7 +52,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     public void softDeleteCategoria(Long id) {
-        Categoria categoria = this.getCategoriaById(id);
+        Categoria categoria = categoriaRepository.findById(id).orElse(null);
         if(categoria == null){
             throw new IllegalArgumentException("La categoría con ID " + id + " no existe");
         }

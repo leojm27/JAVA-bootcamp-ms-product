@@ -2,6 +2,7 @@ package com.ms.product.ms_product.controllers;
 
 import com.ms.product.ms_product.models.Categoria;
 import com.ms.product.ms_product.services.CategoriaService;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,13 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 public class CategoriaController {
 
     private final CategoriaService categoriaService;
-
-    public CategoriaController(CategoriaService categoriaService) {
-        this.categoriaService = categoriaService;
-    }
 
     @GetMapping("/api/categorias")
     public ResponseEntity<?> getCategorias() {
@@ -23,7 +21,7 @@ public class CategoriaController {
             return ResponseEntity.ok(categoriaService.getCategorias());
         } catch (Exception e) {
             return ResponseEntity
-                    .status(500)
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error al obtener categorías: " + e.getMessage());
         }
     }
