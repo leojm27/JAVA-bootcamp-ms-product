@@ -1,6 +1,5 @@
 package com.ms.product.ms_product.services.impl;
 
-import com.ms.product.ms_product.models.Categoria;
 import com.ms.product.ms_product.models.Producto;
 import com.ms.product.ms_product.repository.ProductoRepository;
 import com.ms.product.ms_product.services.ProductoService;
@@ -17,6 +16,10 @@ public class ProductoServicesImpl implements ProductoService {
 
     private final ProductoRepository productoRepository;
 
+    /**
+     * Obtiene todos los productos.
+     * @return Lista de productos
+     */
     @Override
     public List<Producto> getProductos() {
         return productoRepository.findAll()
@@ -26,6 +29,11 @@ public class ProductoServicesImpl implements ProductoService {
                 .toList();
     }
 
+    /**
+     * Obtiene un producto por su ID.
+     * @param id ID del producto a buscar
+     * @return Producto encontrado o null si no existe
+     */
     @Override
     public Producto getProductoById(Long id) {
         return productoRepository.findById(id)
@@ -33,11 +41,22 @@ public class ProductoServicesImpl implements ProductoService {
                 .orElse(null);
     }
 
+    /**
+     * Crea un nuevo producto.
+     * @param producto Producto a crear
+     * @return Producto creado
+     */
     @Override
     public Producto createProducto(Producto producto) {
         return productoRepository.save(producto);
     }
 
+    /**
+     * Actualiza un producto existente.
+     * @param producto Producto con los datos actualizados
+     * @param id ID del producto a actualizar
+     * @return Producto actualizado o null si no existe
+     */
     @Override
     public Producto updateProducto(Producto producto, Long id) {
         return productoRepository.findById(id)
@@ -58,6 +77,10 @@ public class ProductoServicesImpl implements ProductoService {
                 }).orElse(null);
     }
 
+    /**
+     * Elimina un producto de forma lógica (soft delete).
+     * @param id ID del producto a eliminar
+     */
     @Override
     public void softDeleteProducto(Long id) {
         Producto producto = productoRepository.findById(id).orElse(null);

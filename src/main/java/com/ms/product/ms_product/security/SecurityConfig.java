@@ -13,11 +13,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Desactiva CSRF para permitir solicitudes de cualquier origen
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().authenticated() // Todas las solicitudes deben estar autenticadas
+                        .anyRequest().authenticated()
                 )
-                .httpBasic(customizer -> customizer.realmName("MyAppRealm")); // Habilita autenticación básica
+                .httpBasic(customizer -> customizer.realmName("MyAppRealm"));
 
         return http.build();
     }

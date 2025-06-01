@@ -7,14 +7,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @AllArgsConstructor
 public class CategoriaController {
 
     private final CategoriaService categoriaService;
 
+    /**
+     * Obtiene todas las categorías.
+     * @return ResponseEntity con la lista de categorías o un mensaje de error.
+     */
     @GetMapping("/api/categorias")
     public ResponseEntity<?> getCategorias() {
         try {
@@ -26,6 +28,11 @@ public class CategoriaController {
         }
     }
 
+    /**
+     * Obtiene una categoría por su ID.
+     * @param id
+     * @return ResponseEntity con la categoría o un mensaje de error.
+     */
     @GetMapping("/api/categorias/{id}")
     public ResponseEntity<?> getCategoriaById(@PathVariable Long id) {
         try {
@@ -42,6 +49,11 @@ public class CategoriaController {
         }
     }
 
+    /**
+     * Crea una nueva categoría.
+     * @param categoria
+     * @return ResponseEntity con la categoría creada o un mensaje de error.
+     */
     @PostMapping("/api/categorias")
     public ResponseEntity<?> createCategoria(@RequestBody Categoria categoria) {
         try {
@@ -58,6 +70,12 @@ public class CategoriaController {
         }
     }
 
+    /**
+     * Actualiza una categoría existente.
+     * @param categoria
+     * @param id
+     * @return ResponseEntity con la categoría actualizada o un mensaje de error.
+     */
     @PutMapping("/api/categorias/{id}")
     public ResponseEntity<?> updateCategoria(@RequestBody Categoria categoria, @PathVariable("id") Long id) {
         try {
@@ -74,6 +92,11 @@ public class CategoriaController {
         }
     }
 
+    /**
+     * Elimina una categoría de forma lógica (soft delete).
+     * @param id
+     * @return ResponseEntity con el resultado de la operación o un mensaje de error.
+     */
     @DeleteMapping("/api/categorias/{id}")
     public ResponseEntity<?> softDeleteCategoria(@PathVariable Long id){
         try {

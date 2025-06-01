@@ -7,15 +7,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @AllArgsConstructor
 public class ProductoController {
     private final ProductoService productoService;
 
     /**
-     * @return Obtiene todos los productos.
+     * * Obtiene todos los productos.
+     * @return ResponseEntity con la lista de productos o un mensaje de error.
      */
     @GetMapping("/api/productos")
     public ResponseEntity<?> getProductos() {
@@ -28,6 +27,11 @@ public class ProductoController {
         }
     }
 
+    /**
+     * Obtiene un producto por su ID.
+     * @param id ID del producto a buscar.
+     * @return ResponseEntity con el producto encontrado o un mensaje de error.
+     */
     @GetMapping("/api/productos/{id}")
     public ResponseEntity<?> getProductoById(@PathVariable("id") Long id) {
         try {
@@ -44,6 +48,11 @@ public class ProductoController {
         }
     }
 
+    /**
+     * Crea un nuevo producto.
+     * @param producto Producto a crear.
+     * @return ResponseEntity con el producto creado o un mensaje de error.
+     */
     @PostMapping("/api/productos")
     public ResponseEntity<?> createProducto(@RequestBody Producto producto) {
         try {
@@ -60,6 +69,12 @@ public class ProductoController {
         }
     }
 
+    /**
+     * Actualiza un producto existente.
+     * @param producto Producto con los datos actualizados.
+     * @param id ID del producto a actualizar.
+     * @return ResponseEntity con el producto actualizado o un mensaje de error.
+     */
     @PutMapping("/api/productos/{id}")
     public ResponseEntity<?> updateProducto(@RequestBody Producto producto, @PathVariable("id")Long id) {
         try {
@@ -78,6 +93,11 @@ public class ProductoController {
         }
     }
 
+    /**
+     * Elimina un producto de forma lógica.
+     * @param id ID del producto a eliminar.
+     * @return ResponseEntity con el resultado de la operación.
+     */
     @DeleteMapping("/api/productos/{id}")
     public ResponseEntity<?> deleteProducto(@PathVariable("id") Long id) {
         try {

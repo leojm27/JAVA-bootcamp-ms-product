@@ -16,6 +16,10 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     private final CategoriaRepository categoriaRepository;
 
+    /**
+     * Obtiene todas las categorías.
+     * @return Lista de categorías
+     */
     @Override
     public List<Categoria> getCategorias() {
         return categoriaRepository.findAll()
@@ -25,17 +29,35 @@ public class CategoriaServiceImpl implements CategoriaService {
                 .toList();
     }
 
+    /**
+     * Obtiene una categoría por su ID.
+     * @param id
+     * @return Categoria encontrada o null si no existe
+     */
+    @Override
     public Categoria getCategoriaById(Long id) {
         return categoriaRepository.findById(id)
                 .filter(categoria -> categoria.getDeletedAt() == null)
                 .orElse(null);
     }
 
+    /**
+     * Crea una nueva categoría.
+     * @param categoria
+     * @return Categoria creada
+     */
     @Override
     public Categoria createCategoria(Categoria categoria) {
         return categoriaRepository.save(categoria);
     }
 
+    /**
+     * Actualiza una categoría existente.
+     * @param updateCategoria
+     * @param id
+     * @return Categoria actualizada o null si no existe
+     */
+    @Override
     public Categoria updateCategoria(Categoria updateCategoria, Long id) {
         return categoriaRepository.findById(id)
                 .map(categoria -> {
@@ -51,6 +73,11 @@ public class CategoriaServiceImpl implements CategoriaService {
                 }).orElse(null);
     }
 
+    /**
+     * Elimina una categoría de forma lógica (soft delete).
+     * @param id
+     */
+    @Override
     public void softDeleteCategoria(Long id) {
         Categoria categoria = categoriaRepository.findById(id).orElse(null);
         if(categoria == null){
@@ -60,7 +87,5 @@ public class CategoriaServiceImpl implements CategoriaService {
         categoria.setDeletedAt(new Date());
         categoriaRepository.save(categoria);
     }
-
-
 
 }
