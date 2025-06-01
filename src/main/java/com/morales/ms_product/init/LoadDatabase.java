@@ -1,9 +1,9 @@
-package com.ms.product.ms_product.init;
+package com.morales.ms_product.init;
 
-import com.ms.product.ms_product.models.Categoria;
-import com.ms.product.ms_product.models.Producto;
-import com.ms.product.ms_product.repository.CategoriaRepository;
-import com.ms.product.ms_product.repository.ProductoRepository;
+import com.morales.ms_product.models.Categoria;
+import com.morales.ms_product.models.Producto;
+import com.morales.ms_product.repository.CategoriaRepository;
+import com.morales.ms_product.repository.ProductoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

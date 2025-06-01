@@ -1,4 +1,4 @@
-package com.ms.product.ms_product.security;
+package com.morales.ms_product.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

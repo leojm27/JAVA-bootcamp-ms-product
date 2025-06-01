@@ -1,6 +1,6 @@
-package com.ms.product.ms_product.repository;
+package com.morales.ms_product.repository;
 
-import com.ms.product.ms_product.models.Categoria;
+import com.morales.ms_product.models.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

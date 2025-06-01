@@ -1,6 +1,7 @@
-package com.ms.product.ms_product.services;
+package com.morales.ms_product.services;
 
-import com.ms.product.ms_product.models.Categoria;
+import com.morales.ms_product.models.Categoria;
+
 import java.util.List;
 
 public interface CategoriaService {

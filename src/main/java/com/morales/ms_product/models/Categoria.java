@@ -1,6 +1,5 @@
-package com.ms.product.ms_product.models;
+package com.morales.ms_product.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,9 +8,10 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "productos")
+@Table(name = "categorias")
 @NoArgsConstructor
-public class Producto {
+public class Categoria {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,12 +22,6 @@ public class Producto {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "precio", nullable = false)
-    private Double precio;
-
-    @Column(name = "id_categoria", nullable = false)
-    private Long idCategoria;
-
     @Column(name = "created_at" , nullable = false)
     private Date createdAt = new Date();
 
@@ -37,11 +31,9 @@ public class Producto {
     @Column(name = "deleted_at")
     private Date deletedAt;
 
-    public Producto(String nombre, String descripcion, Double precio, Long idCategoria) {
+    public Categoria(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.precio = precio;
-        this.idCategoria = idCategoria;
     }
 
     @PreUpdate

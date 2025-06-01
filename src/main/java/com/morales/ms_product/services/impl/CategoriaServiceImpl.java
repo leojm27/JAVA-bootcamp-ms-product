@@ -1,8 +1,8 @@
-package com.ms.product.ms_product.services.impl;
+package com.morales.ms_product.services.impl;
 
-import com.ms.product.ms_product.models.Categoria;
-import com.ms.product.ms_product.repository.CategoriaRepository;
-import com.ms.product.ms_product.services.CategoriaService;
+import com.morales.ms_product.models.Categoria;
+import com.morales.ms_product.services.CategoriaService;
+import com.morales.ms_product.repository.CategoriaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

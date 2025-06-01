@@ -1,7 +1,7 @@
-package com.ms.product.ms_product.controllers;
+package com.morales.ms_product.controllers;
 
-import com.ms.product.ms_product.models.Categoria;
-import com.ms.product.ms_product.services.CategoriaService;
+import com.morales.ms_product.models.Categoria;
+import com.morales.ms_product.services.CategoriaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

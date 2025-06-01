@@ -1,8 +1,7 @@
-package com.ms.product.ms_product;
+package com.morales.ms_product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 // @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}) // Exclude DataSourceAutoConfiguration if not using a database
 @SpringBootApplication()

@@ -1,4 +1,4 @@
-package com.ms.product.ms_product;
+package com.morales.ms_product;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
