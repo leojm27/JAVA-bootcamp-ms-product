@@ -40,7 +40,6 @@ public class ProductoServiceImplTests {
                 new Producto("producto 2", "Descripción 2", 200.0, 2L)
         ));
         List<Producto> response = productoServicesImpl.getProductos();
-        System.out.println(response);
         assertThat(response).isNotEmpty();
     }
 

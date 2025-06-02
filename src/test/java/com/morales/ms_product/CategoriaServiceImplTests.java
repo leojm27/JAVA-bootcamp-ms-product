@@ -40,7 +40,6 @@ public class CategoriaServiceImplTests {
                 new Categoria("Categoria 2", "Descripción 2")
         ));
         List<Categoria> response = categoriaServiceImpl.getCategorias();
-        System.out.println(response);
         assertThat(response).isNotEmpty();
     }
 
