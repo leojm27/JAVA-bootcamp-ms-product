@@ -1,7 +1,8 @@
 openapi: 3.0.1
 info:
-  title: OpenAPI definition
-  version: v0
+  title: MICROSERVICIO 'MS-PRODUCT'
+  description: Microservicio responsable de la gestión de productos y categorías. Incluye las operaciones de alta, baja, modificación y consulta (ABM) de productos y sus respectivas categorías.
+  version: v1
 servers:
   - url: http://localhost:8082
     description: Generated server url
