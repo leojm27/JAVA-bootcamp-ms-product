@@ -24,7 +24,6 @@ public class CategoriaServiceImpl implements CategoriaService {
     public List<Categoria> getCategorias() {
         return categoriaRepository.findAll()
                 .stream()
-                .sorted(Comparator.comparing(Categoria::getId))
                 .filter(categoria -> categoria.getDeletedAt() == null)
                 .toList();
     }

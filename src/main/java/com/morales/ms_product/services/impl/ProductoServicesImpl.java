@@ -24,7 +24,6 @@ public class ProductoServicesImpl implements ProductoService {
     public List<Producto> getProductos() {
         return productoRepository.findAll()
                 .stream()
-                .sorted(Comparator.comparing(Producto::getId))
                 .filter(producto -> producto.getDeletedAt() == null)
                 .toList();
     }
