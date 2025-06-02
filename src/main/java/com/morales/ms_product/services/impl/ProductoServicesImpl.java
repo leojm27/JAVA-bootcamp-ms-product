@@ -58,7 +58,7 @@ public class ProductoServicesImpl implements ProductoService {
      */
     @Override
     public Producto updateProducto(Producto producto, Long id) {
-        return productoRepository.findById(id)
+        return productoRepository.findById(id).filter(existingProducto -> existingProducto.getDeletedAt() == null)
                 .map(existingProducto -> {
                     if (producto.getNombre() != null) {
                         existingProducto.setNombre(producto.getNombre());
@@ -83,7 +83,7 @@ public class ProductoServicesImpl implements ProductoService {
     @Override
     public void softDeleteProducto(Long id) {
         Producto producto = productoRepository.findById(id).orElse(null);
-        if(producto == null){
+        if(producto == null || producto.getDeletedAt() != null) {
             throw new IllegalArgumentException("La producto con ID " + id + " no existe");
         }
 

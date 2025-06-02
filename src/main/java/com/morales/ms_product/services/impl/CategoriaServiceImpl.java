@@ -58,7 +58,7 @@ public class CategoriaServiceImpl implements CategoriaService {
      */
     @Override
     public Categoria updateCategoria(Categoria updateCategoria, Long id) {
-        return categoriaRepository.findById(id)
+        return categoriaRepository.findById(id).filter(categoria -> categoria.getDeletedAt() == null)
                 .map(categoria -> {
                     if(updateCategoria.getNombre() != null){
                         categoria.setNombre(updateCategoria.getNombre());
@@ -79,7 +79,7 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Override
     public void softDeleteCategoria(Long id) {
         Categoria categoria = categoriaRepository.findById(id).orElse(null);
-        if(categoria == null){
+        if(categoria == null  || categoria.getDeletedAt() != null) {
             throw new IllegalArgumentException("La categoría con ID " + id + " no existe");
         }
 
