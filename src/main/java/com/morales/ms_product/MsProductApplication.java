@@ -9,7 +9,7 @@ public class MsProductApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MsProductApplication.class, args);
-		System.out.println("Product Service is running...");
+		System.out.println("Microservicio 'ms-product' iniciado correctamente.");
 	}
 
 }

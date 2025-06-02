@@ -21,53 +21,42 @@ public class LoadDatabase {
             try {
                 if(categoriaRepository.findAll().isEmpty() && productoRepository.findAll().isEmpty()){
                     System.out.println("Creando registros de categorias...");
-                    Categoria categoria1 = new Categoria("Hogar","Artículos para el hogar y la cocina.");
-                    Categoria categoria2 = new Categoria("Alimentos","Alimentos no perecederos y de consumo masivo.");
-                    Categoria categoria3 = new Categoria("Cuidado personal","Productos de higiene y cuidado personal.");
+                    Categoria categoria1 = new Categoria("Computación", "Productos relacionados con computadoras, accesorios y tecnología.");
+                    Categoria categoria2 = new Categoria("Fotografía", "Cámaras, lentes y equipos fotográficos para aficionados y profesionales.");
+                    Categoria categoria3 = new Categoria("Cafetería", "Cafeteras, accesorios y productos para los amantes del café.");
 
-                    System.out.println("Categoria Hogar: " + categoriaRepository.save(categoria1));
-                    System.out.println("Categoria Alimentos: " + categoriaRepository.save(categoria2));
-                    System.out.println("Categoria Cuidado personal: " + categoriaRepository.save(categoria3));
+                    System.out.println("Categoria: " + categoriaRepository.save(categoria1));
+                    System.out.println("Categoria: " + categoriaRepository.save(categoria2));
+                    System.out.println("Categoria: " + categoriaRepository.save(categoria3));
 
                     System.out.println("Creando registros de productos...");
-                    // Hogar
-                    Producto producto1 = new Producto("Juego de sábanas 2 plazas", "Sábanas de algodón 144 hilos", 15999.00,1L);
-                    Producto producto2 = new Producto("Olla Essen 24cm", "Olla de aluminio fundido con tapa de vidrio", 34999.00, 1L);
-                    Producto producto3 = new Producto("Set de 6 vasos de vidrio", "Vasos de vidrio templado para bebidas", 6999.00, 1L);
-                    Producto producto4 = new Producto("Cuchillo Tramontina Chef", "Cuchillo de cocina profesional", 7999.00, 1L);
-                    Producto producto5 = new Producto("Alfombra antideslizante baño", "Alfombra de microfibra con base de goma", 4999.00,1L);
+                    // Computación
+                    Producto producto1 = new Producto("Mouse inalámbrico Logitech M185", "Mouse compacto con conexión USB inalámbrica", 5499.00, 1L);
+                    Producto producto2 = new Producto("Teclado mecánico Redragon Kumara", "Teclado gamer con retroiluminación LED RGB", 18999.00, 1L);
+                    Producto producto3 = new Producto("Monitor Samsung 24'' Full HD", "Pantalla LED con resolución 1920x1080 y tecnología Eye Saver", 65999.00, 1L);
 
-                    // Alimentos
-                    Producto producto6 = new Producto("Arroz largo fino 1kg", "Arroz blanco tipo largo fino", 899.00, 2L);
-                    Producto producto7 = new Producto("Aceite de girasol 1.5L", "Aceite comestible de girasol", 2699.00, 2L);
-                    Producto producto8 = new Producto("Yerba mate Taragüi 1kg", "Yerba mate con palo tradicional", 2799.00, 2L);
-                    Producto producto9 = new Producto("Harina 0000", "1kg	Harina de trigo refinada", 799.00, 2L);
-                    Producto producto10 = new Producto("Lentejas secas 500g", "Lentejas secas para guisos", 1199.00, 2L);
+                    // Fotografía
+                    Producto producto4 = new Producto("Cámara réflex Canon EOS Rebel T7", "Cámara DSLR con lente 18-55mm incluida", 239999.00, 2L);
+                    Producto producto5 = new Producto("Trípode Fotopro DIGI-3400", "Trípode liviano para cámaras compactas y réflex", 12999.00, 2L);
+                    Producto producto6 = new Producto("Lente Canon EF 50mm f/1.8 STM", "Lente fijo ideal para retratos y fotografía en poca luz", 58999.00, 2L);
 
-                    // Cuidado personal
-                    Producto producto11 = new Producto("Shampoo Pantene 400ml", "Shampoo para cabello normal a seco", 4299.00, 3L);
-                    Producto producto12 = new Producto("Jabón Dove 90g", "Jabón en barra con crema hidratante", 1299.00, 3L);
-                    Producto producto13 = new Producto("Pasta dental Colgate 90g", "Pasta dental triple acción", 1399.00, 3L);
-                    Producto producto14 = new Producto("Desodorante Rexona aerosol", "Antitranspirante en aerosol", 2899.00, 3L);
-                    Producto producto15 = new Producto("Toalla femenina Always 8u", "Toallas nocturnas con alas", 1899.00, 3L);
+                    // Cafetería
+                    Producto producto7 = new Producto("Cafetera Nespresso Essenza Mini", "Cafetera automática de cápsulas con diseño compacto", 74999.00, 3L);
+                    Producto producto8 = new Producto("Molino de café manual Hario", "Molino con muelas de cerámica ajustables para café espresso", 21999.00, 3L);
+                    Producto producto9 = new Producto("Tazas espresso de cerámica x2", "Set de dos tazas para espresso de 90ml", 4999.00, 3L);
 
-                    System.out.println("Producto de categoria Hogar: " + productoRepository.save(producto1));
-                    System.out.println("Producto de categoria Hogar: " + productoRepository.save(producto2));
-                    System.out.println("Producto de categoria Hogar: " + productoRepository.save(producto3));
-                    System.out.println("Producto de categoria Hogar: " + productoRepository.save(producto4));
-                    System.out.println("Producto de categoria Hogar: " + productoRepository.save(producto5));
-                    System.out.println("Producto de categoria Alimentos: " + productoRepository.save(producto6));
-                    System.out.println("Producto de categoria Alimentos: " + productoRepository.save(producto7));
-                    System.out.println("Producto de categoria Alimentos: " + productoRepository.save(producto8));
-                    System.out.println("Producto de categoria Alimentos: " + productoRepository.save(producto9));
-                    System.out.println("Producto de categoria Alimentos: " + productoRepository.save(producto10));
-                    System.out.println("Producto de categoria Cuidado personal: " + productoRepository.save(producto11));
-                    System.out.println("Producto de categoria Cuidado personal: " + productoRepository.save(producto12));
-                    System.out.println("Producto de categoria Cuidado personal: " + productoRepository.save(producto13));
-                    System.out.println("Producto de categoria Cuidado personal: " + productoRepository.save(producto14));
-                    System.out.println("Producto de categoria Cuidado personal: " + productoRepository.save(producto15));
+                    System.out.println("Producto: " + productoRepository.save(producto1));
+                    System.out.println("Producto: " + productoRepository.save(producto2));
+                    System.out.println("Producto: " + productoRepository.save(producto3));
+                    System.out.println("Producto: " + productoRepository.save(producto4));
+                    System.out.println("Producto: " + productoRepository.save(producto5));
+                    System.out.println("Producto: " + productoRepository.save(producto6));
+                    System.out.println("Producto: " + productoRepository.save(producto7));
+                    System.out.println("Producto: " + productoRepository.save(producto8));
+                    System.out.println("Producto: " + productoRepository.save(producto9));
+                    System.out.println("Base de Datos inicializada correctamente.");
                 } else {
-                    System.out.println("La base de datos ya contiene registros, no se realizarán inserciones iniciales.");
+                    System.out.println("Base de Datos inicializada correctamente.");
                 }
             } catch (Exception e){
                 e.printStackTrace();
