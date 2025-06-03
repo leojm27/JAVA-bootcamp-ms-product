@@ -64,7 +64,21 @@ SECURITY_USERNAME=auth_username
 SECURITY_PASSWORD=auth_password
 ```
 
-## 🔗 Repositorio
-- 📁 Podés acceder al código fuente de este microservicio en el siguiente enlace:
-- 👉 github.com/leojm27/JAVA-bootcamp-ms-product
+## 🐳 Cómo levantar el proyecto con Docker
+### 1. Clonar el repositorio
+- git clone https://github.com/leojm27/JAVA-bootcamp-ms-product.git
+- cd JAVA-bootcamp-ms-product
+### 2. Construir el JAR y la imagen Docker
+- desde el IDE y a maven/gradle -> clean, -> package
+- docker build -t ms-product:v1 .
+
+### 3. Ejecutar con Docker Compose
+- docker compose up -d
+
+## 🌐 Acceso
+Una vez levantado el contenedor, accedé al servicio MS-PRODUCT desde:
+http://localhost:8082
+
+Si tenés habilitada la documentación Swagger:
+http://localhost:8082/swagger-ui.html
 
